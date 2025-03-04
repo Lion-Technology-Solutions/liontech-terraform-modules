@@ -17,6 +17,7 @@ resource "aws_instance" "rancher_server" {
 resource "aws_security_group" "rancher_sg" {
   name        = "rancher-security-group"
   description = "Allow HTTP, HTTPS, and SSH traffic"
+  vpc_id = var.vpc_id
 
   ingress {
     from_port   = 22
